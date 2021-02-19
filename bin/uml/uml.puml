@@ -1,0 +1,30 @@
+  
+@startuml DM2 Sheyma BOUSTAD
+
+!Design pattern employé : Composite et Proxy
+
+class RequeteHTTP {
+    + afficher(): void
+}
+interface IRequeteHttp {
+    + afficher(): void
+}
+class Url {
+    + afficher(): void
+}
+class Body {
+    + afficher(): void
+}
+class Header {
+    + afficher(): void
+}
+
+IRequeteHttp <|.. RequeteHTTP
+IRequeteHttp <|.. Header
+IRequeteHttp <|.. Body
+IRequeteHttp <|.. Url
+
+class ServeurWeb
+class ServeurWebProxy
+ServeurWeb <|-- ServeurWebProxy
+@enduml[]
